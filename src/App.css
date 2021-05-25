@@ -60,6 +60,7 @@ button {
   color: #fff;
   font-weight: bold;
   align-items: center;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 00.3);
 }
 
 button:hover {
