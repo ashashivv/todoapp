@@ -12,6 +12,14 @@ const App = () => {
     setList([...list, todo]);
     setTodo(" ");
   };
+
+  const deleteTodo = (id) => {
+    setList(
+      list.filter((arrElem, index) => {
+        return index !== id;
+      })
+    );
+  };
   return (
     <>
       <div className="main-div">
@@ -28,8 +36,15 @@ const App = () => {
             <button onClick={AddTodo}>+</button>
           </div>
           <ol>
-            {list.map((listVal) => {
-              return <TodoList text={listVal} />;
+            {list.map((listVal, index) => {
+              return (
+                <TodoList
+                  id={index}
+                  text={listVal}
+                  key={index}
+                  onSelect={deleteTodo}
+                />
+              );
             })}
           </ol>
         </div>
